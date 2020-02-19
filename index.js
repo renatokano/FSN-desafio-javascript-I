@@ -3,3 +3,26 @@ const alunosDaEscola=[{nome:"Henrique",notas:[],cursos:[],faltas:5},{nome:"Edson
 
 
 // implementação
+let listarAlunos = (baseDeAlunos) => {
+    /* Com essa função o usuário poderá ver todos os alunos cadastrados atualmente no sistema. 
+    Vale dizer que As informações deverão ser exibidas em um formato amigável. */
+
+    let exibirBarra = ()=>console.log("=======================================================");
+
+    baseDeAlunos.forEach(aluno => {
+        exibirBarra();
+        console.log(`Nome: ${aluno.nome}`);
+        console.log(`Notas: ${aluno.notas}`);
+        console.log('Cursos: ');
+        if (aluno.cursos.length > 0){
+            aluno.cursos.forEach(curso => {
+                console.log(` - ${curso.nomeDoCurso}`);
+            });
+        } else {
+            console.log(` - Nenhum curso`);
+        }
+        console.log(`Faltas: ${aluno.faltas}`);
+    });
+}
+
+listarAlunos(alunosDaEscola);
