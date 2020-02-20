@@ -27,10 +27,10 @@ let listarAlunos = (baseDeAlunos) => {
     });
 }
 
-listarAlunos(alunosDaEscola);
+//listarAlunos(alunosDaEscola);
 
 // feature/adicionar-aluno
-adicionarAluno = (aluno, baseDeAlunos) => {
+let adicionarAluno = (aluno, baseDeAlunos) => {
     /*
         Essa função irá receber uma *string* que é nome do aluno a ser criado. 
         E seguindo o modelo de aluno, o mesmo deverá ser inserido na lista de alunos.
@@ -43,20 +43,20 @@ adicionarAluno = (aluno, baseDeAlunos) => {
         console.log('Houve um erro ao adicionar o aluno na base.');
 }
 
-let aluno = {
-    nome: "Renato",
-    notas: [7,8,9],
-    cursos: [{
-        nomeDoCurso: "Full Stack",
-        dataMatricula: new Date
-    }],
-    faltas: 0
-}
+// let aluno = {
+//     nome: "Renato",
+//     notas: [7,8,9],
+//     cursos: [{
+//         nomeDoCurso: "Full Stack",
+//         dataMatricula: new Date
+//     }],
+//     faltas: 0
+// }
 
-adicionarAluno(aluno, alunosDaEscola);
+// adicionarAluno(aluno, alunosDaEscola);
 
 // feature/buscar-aluno
-function buscarAluno(nome, baseDeAlunos){
+let buscarAluno = (nome, baseDeAlunos) => {
     /* 
         Por meio dessa função, podemos pesquisar um aluno por nome na lista de aluno. 
         Ela deverá exibir um feedback, tanto para quando encontrar o aluno, tanto quando não encontrar. 
@@ -69,12 +69,12 @@ function buscarAluno(nome, baseDeAlunos){
     return result[0];
 }
 
-let alunoBuscar = "Henrique";
-let result = buscarAluno(alunoBuscar, alunosDaEscola);
-console.log(result);
+// let alunoBuscar = "Henrique";
+// let result = buscarAluno(alunoBuscar, alunosDaEscola);
+// console.log(result);
 
 // feature/matricular-aluno
-function matricularAluno(aluno, nomeDoCurso, baseDeAlunos){
+let matricularAluno = (aluno, nomeDoCurso, baseDeAlunos) => {
     /* 
         Essa funcionalidade irá permitir, cadastrar um aluno em um curso. 
         Essa função só poderá ser executada em um aluno já devidamente cadastrado no sistema, 
@@ -95,10 +95,12 @@ function matricularAluno(aluno, nomeDoCurso, baseDeAlunos){
     }
 }
 
-matricularAluno(aluno, "Advanced Deep Learning", alunosDaEscola);
+
+
+// matricularAluno(aluno, "Advanced Deep Learning", alunosDaEscola);
 
 // feature/aplicar-falta
-function aplicarFalta(aluno, baseDeAlunos){
+let aplicarFalta = (aluno, baseDeAlunos) => {
     /*
         Ao receber um aluno devidamente cadastrado em nossa lista. Você deverá incrementar uma falta ao aluno. 
         Você deverá dar um feedback ao concluir a tarefa. Só poderá aplicar falta em aluno se o mesmo tiver 
@@ -119,11 +121,11 @@ function aplicarFalta(aluno, baseDeAlunos){
     }
 }
 
-let aluno2 = buscarAluno("Renato",alunosDaEscola);
-aplicarFalta(aluno2, alunosDaEscola);
+// let aluno2 = buscarAluno("Renato",alunosDaEscola);
+// aplicarFalta(aluno2, alunosDaEscola);
 
 // feature/aplicar-nota
-function aplicarNota(aluno, nota, baseDeAlunos){
+let aplicarNota = (aluno, nota, baseDeAlunos) => {
     /*
         Ao receber um aluno devidamente cadastrado em nossa lista. 
         Você deverá adicionar uma nota ao aluno na sua lista de notas. 
@@ -145,11 +147,11 @@ function aplicarNota(aluno, nota, baseDeAlunos){
     }
 }
 
-let aluno3 = buscarAluno("Renato", alunosDaEscola);
-aplicarNota(aluno3, 9, alunosDaEscola);
-listarAlunos(alunosDaEscola);
+// let aluno3 = buscarAluno("Renato", alunosDaEscola);
+// aplicarNota(aluno3, 9, alunosDaEscola);
+// listarAlunos(alunosDaEscola);
 
-function aprovarAluno(aluno, baseDeAlunos){
+let aprovarAluno = (aluno, baseDeAlunos) => {
     /* 
         Ao receber um aluno devidamente cadastrado em nossa lista, deverá dizer se o mesmo está aprovado ou não. 
         Os critérios de aprovação são: ter no máximo 3 faltas e média 7 em notas.
@@ -184,6 +186,6 @@ function aprovarAluno(aluno, baseDeAlunos){
     }
 }
 
-let aluno4 = buscarAluno("Renato", alunosDaEscola);
-aprovarAluno(aluno4, alunosDaEscola);
-listarAlunos(alunosDaEscola);
+// let aluno4 = buscarAluno("Renato", alunosDaEscola);
+// aprovarAluno(aluno4, alunosDaEscola);
+// listarAlunos(alunosDaEscola);
