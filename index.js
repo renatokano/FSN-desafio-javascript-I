@@ -92,8 +92,32 @@ function matricularAluno(aluno, nomeDoCurso, baseDeAlunos){
         return aluno;
     } else {
         console.log("Matrícula não pode ser realizada. O aluno deve ser cadastrado no sistema anteriormente.");
-        return false;
     }
 }
 
 matricularAluno(aluno, "Advanced Deep Learning", alunosDaEscola);
+
+// feature/aplicar-falta
+function aplicarFalta(aluno, baseDeAlunos){
+    /*
+        Ao receber um aluno devidamente cadastrado em nossa lista. Você deverá incrementar uma falta ao aluno. 
+        Você deverá dar um feedback ao concluir a tarefa. Só poderá aplicar falta em aluno se o mesmo tiver 
+        matriculado em um curso.
+    */
+    let result = buscarAluno(aluno.nome, baseDeAlunos);
+    if(typeof result !== 'undefined'){
+        if(aluno.cursos.length > 0){
+            aluno.faltas++;
+            console.log(`Falta adicionada com sucesso!!! \nO aluno \'${aluno.nome}\' agora possui \'${aluno.faltas}\' falta(s).`);
+            return aluno;
+        }
+        console.log("Erro ao aplicar falta!!! Aluno deve estar matriculado em algum curso.");
+        return aluno;
+    } else {
+        console.log("Erro ao aplicar falta!!! Aluno deve ser cadastrado no sistema.");
+        return false;
+    }
+}
+
+let aluno2 = buscarAluno("Renato",alunosDaEscola);
+aplicarFalta(aluno2, alunosDaEscola);
