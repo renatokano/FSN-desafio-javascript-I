@@ -2,14 +2,15 @@
 const alunosDaEscola=[{nome:"Henrique",notas:[],cursos:[],faltas:5},{nome:"Edson",notas:[],cursos:[],faltas:2},{nome:"Bruno",notas:[10,9.8,9.6],cursos:[],faltas:0},{nome:"Guilherme",notas:[10,9.8,9.6],cursos:[{nomeDoCurso:"Full Stack",dataMatricula:new Date}],faltas:0},{nome:"Carlos",notas:[],cursos:[],faltas:0},{nome:"Lucca",notas:[10,9.8,9.6],cursos:[{nomeDoCurso:"UX",dataMatricula:new Date}],faltas:0}];
 
 // implementação
+// helpers
+let exibirBarra = ()=>console.log("........................................................");
+
 // feature/listar-alunos
 let listarAlunos = (baseDeAlunos) => {
     /* 
         Com essa função o usuário poderá ver todos os alunos cadastrados atualmente no sistema. 
         Vale dizer que As informações deverão ser exibidas em um formato amigável. 
     */
-
-    let exibirBarra = ()=>console.log("=======================================================");
 
     baseDeAlunos.forEach(aluno => {
         exibirBarra();
@@ -27,7 +28,7 @@ let listarAlunos = (baseDeAlunos) => {
     });
 }
 
-//listarAlunos(alunosDaEscola);
+// listarAlunos(alunosDaEscola);
 
 // feature/adicionar-aluno
 let adicionarAluno = (aluno, baseDeAlunos) => {
@@ -36,6 +37,7 @@ let adicionarAluno = (aluno, baseDeAlunos) => {
         E seguindo o modelo de aluno, o mesmo deverá ser inserido na lista de alunos.
         A função deve devolver um feedback de sucesso, caso o aluno seja inserido corretamente.
     */
+    exibirBarra();
     let alunosCadastradosAntes = baseDeAlunos.length;
     let alunosCadastradosDepois = baseDeAlunos.push(aluno);
     (alunosCadastradosAntes < alunosCadastradosDepois) ?
@@ -43,15 +45,15 @@ let adicionarAluno = (aluno, baseDeAlunos) => {
         console.log('Houve um erro ao adicionar o aluno na base.');
 }
 
-// let aluno = {
-//     nome: "Renato",
-//     notas: [7,8,9],
-//     cursos: [{
-//         nomeDoCurso: "Full Stack",
-//         dataMatricula: new Date
-//     }],
-//     faltas: 0
-// }
+let aluno = {
+    nome: "Renato",
+    notas: [7,8,9],
+    cursos: [{
+        nomeDoCurso: "Full Stack",
+        dataMatricula: new Date
+    }],
+    faltas: 0
+}
 
 // adicionarAluno(aluno, alunosDaEscola);
 
@@ -62,6 +64,7 @@ let buscarAluno = (nome, baseDeAlunos) => {
         Ela deverá exibir um feedback, tanto para quando encontrar o aluno, tanto quando não encontrar. 
         E deverá devolver um aluno em seu retorno. 
     */
+    exibirBarra();
     let result = baseDeAlunos.filter((aluno) => aluno.nome === nome);
     result.length > 0 ?
         console.log(`Aluno \'${nome}\' encontrado.`) :
@@ -82,6 +85,7 @@ let matricularAluno = (aluno, nomeDoCurso, baseDeAlunos) => {
         Lembre-se de exibir o feedback para o usuário. 
     */
     let result = buscarAluno(aluno.nome, baseDeAlunos);
+    exibirBarra();
     if(typeof result !== 'undefined'){
         let cursoMatricular = {
             nomeDoCurso,
@@ -95,8 +99,6 @@ let matricularAluno = (aluno, nomeDoCurso, baseDeAlunos) => {
     }
 }
 
-
-
 // matricularAluno(aluno, "Advanced Deep Learning", alunosDaEscola);
 
 // feature/aplicar-falta
@@ -107,6 +109,7 @@ let aplicarFalta = (aluno, baseDeAlunos) => {
         matriculado em um curso.
     */
     let result = buscarAluno(aluno.nome, baseDeAlunos);
+    exibirBarra();
     if(typeof result !== 'undefined'){
         if(aluno.cursos.length > 0){
             aluno.faltas++;
@@ -133,6 +136,7 @@ let aplicarNota = (aluno, nota, baseDeAlunos) => {
         Só poderá aplicar nota em aluno se o mesmo tiver matriculado em um curso.
     */
    let result = buscarAluno(aluno.nome, baseDeAlunos);
+   exibirBarra();
    if(typeof result !== 'undefined'){
        if(aluno.cursos.length > 0){
            aluno.notas.push(nota);
@@ -149,8 +153,8 @@ let aplicarNota = (aluno, nota, baseDeAlunos) => {
 
 // let aluno3 = buscarAluno("Renato", alunosDaEscola);
 // aplicarNota(aluno3, 9, alunosDaEscola);
-// listarAlunos(alunosDaEscola);
 
+// feature/aprovar-aluno
 let aprovarAluno = (aluno, baseDeAlunos) => {
     /* 
         Ao receber um aluno devidamente cadastrado em nossa lista, deverá dizer se o mesmo está aprovado ou não. 
@@ -158,6 +162,7 @@ let aprovarAluno = (aluno, baseDeAlunos) => {
         O aluno só poderá ser aprovado se o mesmo tiver matriculado em um curso.
     */
    let result = buscarAluno(aluno.nome, baseDeAlunos);
+   exibirBarra();
    if(typeof result !== 'undefined'){
        // aluno matriculado em pelo menos um curso
        if(aluno.cursos.length > 0){
