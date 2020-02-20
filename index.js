@@ -40,7 +40,7 @@ adicionarAluno = (aluno, baseDeAlunos) => {
     let alunosCadastradosDepois = baseDeAlunos.push(aluno);
     (alunosCadastradosAntes < alunosCadastradosDepois) ?
         console.log(`Aluno \'${aluno.nome}\' cadastrado com sucesso!`) :
-        console.log('House um erro ao adicionar o aluno na base.');
+        console.log('Houve um erro ao adicionar o aluno na base.');
 }
 
 let aluno = {
