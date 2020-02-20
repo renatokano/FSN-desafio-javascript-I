@@ -72,3 +72,28 @@ function buscarAluno(nome, baseDeAlunos){
 let alunoBuscar = "Henrique";
 let result = buscarAluno(alunoBuscar, alunosDaEscola);
 console.log(result);
+
+// feature/matricular-aluno
+function matricularAluno(aluno, nomeDoCurso, baseDeAlunos){
+    /* 
+        Essa funcionalidade irá permitir, cadastrar um aluno em um curso. 
+        Essa função só poderá ser executada em um aluno já devidamente cadastrado no sistema, 
+        e deverá armazenar a data atual no momento da matricula.
+        Lembre-se de exibir o feedback para o usuário. 
+    */
+    let result = buscarAluno(aluno.nome, baseDeAlunos);
+    if(typeof result !== 'undefined'){
+        let cursoMatricular = {
+            nomeDoCurso,
+            dataMatricula:new Date
+        };
+        aluno.cursos.push(cursoMatricular);
+        console.log(`O aluno \'${aluno.nome}\' foi matriculado com sucesso no curso \'${nomeDoCurso}\'.`);
+        return aluno;
+    } else {
+        console.log("Matrícula não pode ser realizada. O aluno deve ser cadastrado no sistema anteriormente.");
+        return false;
+    }
+}
+
+matricularAluno(aluno, "Advanced Deep Learning", alunosDaEscola);
