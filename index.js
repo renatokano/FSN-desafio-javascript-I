@@ -72,3 +72,31 @@ function buscarAluno(nome, baseDeAlunos){
 let alunoBuscar = "Henrique";
 let result = buscarAluno(alunoBuscar, alunosDaEscola);
 console.log(result);
+
+
+// feature/aplicar-nota
+function aplicarNota(aluno, nota, baseDeAlunos){
+    /*
+        Ao receber um aluno devidamente cadastrado em nossa lista. 
+        Você deverá adicionar uma nota ao aluno na sua lista de notas. 
+        Você deverá dar um feedback ao concluir a tarefa. 
+        Só poderá aplicar nota em aluno se o mesmo tiver matriculado em um curso.
+    */
+   let result = buscarAluno(aluno.nome, baseDeAlunos);
+   if(typeof result !== 'undefined'){
+       if(aluno.cursos.length > 0){
+           aluno.notas.push(nota);
+           console.log(`Nota \'${nota}\' adicionada com sucesso!!! \nO aluno \'${aluno.nome}\' agora possui as notas \'${aluno.notas.join(", ")}\'.`);
+           return aluno;
+       }
+       console.log("Erro ao aplicar nota!!! Aluno deve estar matriculado em algum curso.");
+       return aluno;
+   } else {
+       console.log("Erro ao aplicar nota!!! Aluno deve ser cadastrado no sistema.");
+       return false;
+   }
+}
+
+let aluno3 = buscarAluno("Renato", alunosDaEscola);
+aplicarNota(aluno3, 9, alunosDaEscola);
+listarAlunos(alunosDaEscola);
