@@ -1,12 +1,13 @@
 // Base a ser utilizada
 const alunosDaEscola=[{nome:"Henrique",notas:[],cursos:[],faltas:5},{nome:"Edson",notas:[],cursos:[],faltas:2},{nome:"Bruno",notas:[10,9.8,9.6],cursos:[],faltas:0},{nome:"Guilherme",notas:[10,9.8,9.6],cursos:[{nomeDoCurso:"Full Stack",dataMatricula:new Date}],faltas:0},{nome:"Carlos",notas:[],cursos:[],faltas:0},{nome:"Lucca",notas:[10,9.8,9.6],cursos:[{nomeDoCurso:"UX",dataMatricula:new Date}],faltas:0}];
 
-
 // implementação
-<<<<<<< HEAD
+// feature/listar-alunos
 let listarAlunos = (baseDeAlunos) => {
-    /* Com essa função o usuário poderá ver todos os alunos cadastrados atualmente no sistema. 
-    Vale dizer que As informações deverão ser exibidas em um formato amigável. */
+    /* 
+        Com essa função o usuário poderá ver todos os alunos cadastrados atualmente no sistema. 
+        Vale dizer que As informações deverão ser exibidas em um formato amigável. 
+    */
 
     let exibirBarra = ()=>console.log("=======================================================");
 
@@ -27,9 +28,8 @@ let listarAlunos = (baseDeAlunos) => {
 }
 
 listarAlunos(alunosDaEscola);
-=======
 
-// adicionar-aluno
+// feature/adicionar-aluno
 adicionarAluno = (aluno, baseDeAlunos) => {
     /*
         Essa função irá receber uma *string* que é nome do aluno a ser criado. 
@@ -54,4 +54,21 @@ let aluno = {
 }
 
 adicionarAluno(aluno, alunosDaEscola);
->>>>>>> feature/adicionar-aluno
+
+// feature/buscar-aluno
+function buscarAluno(nome, baseDeAlunos){
+    /* 
+        Por meio dessa função, podemos pesquisar um aluno por nome na lista de aluno. 
+        Ela deverá exibir um feedback, tanto para quando encontrar o aluno, tanto quando não encontrar. 
+        E deverá devolver um aluno em seu retorno. 
+    */
+    let result = baseDeAlunos.filter((aluno) => aluno.nome === nome);
+    result.length > 0 ?
+        console.log(`Aluno \'${nome}\' encontrado.`) :
+        console.log(`Aluno \'${nome}\' não encontrado.`)
+    return result[0];
+}
+
+let alunoBuscar = "Henrique";
+let result = buscarAluno(alunoBuscar, alunosDaEscola);
+console.log(result);
