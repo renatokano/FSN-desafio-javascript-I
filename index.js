@@ -142,9 +142,48 @@ function aplicarNota(aluno, nota, baseDeAlunos){
    } else {
        console.log("Erro ao aplicar nota!!! Aluno deve ser cadastrado no sistema.");
        return false;
-   }
+    }
 }
 
 let aluno3 = buscarAluno("Renato", alunosDaEscola);
 aplicarNota(aluno3, 9, alunosDaEscola);
+listarAlunos(alunosDaEscola);
+
+function aprovarAluno(aluno, baseDeAlunos){
+    /* 
+        Ao receber um aluno devidamente cadastrado em nossa lista, deverá dizer se o mesmo está aprovado ou não. 
+        Os critérios de aprovação são: ter no máximo 3 faltas e média 7 em notas.
+        O aluno só poderá ser aprovado se o mesmo tiver matriculado em um curso.
+    */
+   let result = buscarAluno(aluno.nome, baseDeAlunos);
+   if(typeof result !== 'undefined'){
+       // aluno matriculado em pelo menos um curso
+       if(aluno.cursos.length > 0){
+            // critérios de aprovação
+            let mediaDeNotasMinima = 7;
+            let numeroDeFaltasMaxima = 3;
+            // notas e faltas do aluno
+            let mediaDeNotasAluno = aluno.notas.reduce((soma, nota) => soma+=nota) / aluno.notas.length;
+            let faltas = aluno.faltas;
+            // verificação dos critérios de aprovação
+            if(mediaDeNotasAluno >= mediaDeNotasMinima && faltas <= numeroDeFaltasMaxima){
+                console.log(`O aluno \'${aluno.nome}\' está \'aprovado\' com média \'${mediaDeNotasAluno.toFixed(1)}\' e \'${faltas}\' falta(s).`);
+                return true;
+            }
+            // aluno reprovado
+            console.log(`O aluno \'${aluno.nome}\' está \'reprovado\' com média \'${mediaDeNotasAluno.toFixed(1)}\' e \'${faltas}\' falta(s).`);
+            return false;
+       }
+       // aluno não matriculado
+       console.log("Erro: Aluno deve estar matriculado em algum curso.");
+       return false;
+   } else {
+       // aluno não cadastrado
+       console.log("Erro: Aluno deve ser cadastrado no sistema.");
+       return false;
+    }
+}
+
+let aluno4 = buscarAluno("Renato", alunosDaEscola);
+aprovarAluno(aluno4, alunosDaEscola);
 listarAlunos(alunosDaEscola);
