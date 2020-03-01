@@ -1,7 +1,11 @@
 const alunosDaEscola = require("./baseDeAlunos");
 
+<<<<<<< HEAD
 // helpers
 let exibirBarra = ()=>console.log("........................................................");
+=======
+const {exibirBarra} = require("./escolarHelper");
+>>>>>>> refactoring/escolarHelper
 
 // feature/listar-alunos
 let listarAlunos = (baseDeAlunos) => {
