@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/renatokano/FSN-desafio-javascript-I/issues"
   },
-  "homepage": "https://github.com/renatokano/FSN-desafio-javascript-I#readme"
+  "homepage": "https://github.com/renatokano/FSN-desafio-javascript-I#readme",
+  "devDependencies": {
+    "jasmine": "^3.5.0"
+  }
 }
