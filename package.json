@@ -1,0 +1,19 @@
+{
+  "name": "fsn-desafio-javascript-i",
+  "version": "1.0.0",
+  "description": "Sistema para atender o gerenciamento de uma escola.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renatokano/FSN-desafio-javascript-I.git"
+  },
+  "author": "Renato Kano",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/renatokano/FSN-desafio-javascript-I/issues"
+  },
+  "homepage": "https://github.com/renatokano/FSN-desafio-javascript-I#readme"
+}
