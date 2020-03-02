@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/renatokano/FSN-desafio-javascript-I.svg?branch=master)](https://travis-ci.com/renatokano/FSN-desafio-javascript-I)
+
 # DH Fullstack - Desafio Javascript I
 
  - Tema: Sistema escolar
