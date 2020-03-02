@@ -98,13 +98,13 @@ let aplicarFalta = (aluno, baseDeAlunos) => {
   let result = buscarAluno(aluno.nome, baseDeAlunos, false);
   exibirBarra();
   if(result){
-      if(aluno.cursos.length > 0){
-          aluno.faltas++;
-          console.log(`Falta adicionada com sucesso!!! \nO aluno \'${aluno.nome}\' agora possui \'${aluno.faltas}\' falta(s).`);
-          return aluno;
+      if(result.cursos.length > 0){
+        result.faltas++;
+          console.log(`Falta adicionada com sucesso!!! \nO aluno \'${result.nome}\' agora possui \'${result.faltas}\' falta(s).`);
+          return result;
       }
       console.log("Erro ao aplicar falta!!! Aluno deve estar matriculado em algum curso.");
-      return aluno;
+      return result;
   } else {
       console.log("Erro ao aplicar falta!!! Aluno deve ser cadastrado no sistema.");
       return false;
