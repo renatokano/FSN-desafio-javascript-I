@@ -37,7 +37,7 @@ let adicionarAluno = (nomeAluno, baseDeAlunos) => {
       faltas: 0
   }
   exibirBarra();
-  baseDeAlunos.push(aluno) 
+  aluno.nome && baseDeAlunos.push(aluno) 
       ? console.log(`Aluno \'${aluno.nome}\' cadastrado com sucesso!`) 
       : console.log('Houve um erro ao adicionar o aluno na base.');
 }
@@ -80,9 +80,9 @@ let matricularAluno = (aluno, nomeDoCurso, baseDeAlunos) => {
           nomeDoCurso,
           dataMatricula:new Date
       };
-      aluno.cursos.push(cursoMatricular);
-      console.log(`O aluno \'${aluno.nome}\' foi matriculado com sucesso no curso \'${nomeDoCurso}\'.`);
-      return aluno;
+      result.cursos.push(cursoMatricular);
+      console.log(`O aluno \'${result.nome}\' foi matriculado com sucesso no curso \'${nomeDoCurso}\'.`);
+      return result;
   } else {
       console.log("Matrícula não pode ser realizada. O aluno deve ser cadastrado no sistema anteriormente.");
   }
