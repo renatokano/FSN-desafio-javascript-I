@@ -122,13 +122,13 @@ let aplicarNota = (aluno, nota, baseDeAlunos) => {
  let result = buscarAluno(aluno.nome, baseDeAlunos, false);
  exibirBarra();
  if(result){
-     if(aluno.cursos.length > 0){
-         aluno.notas.push(nota);
-         console.log(`Nota \'${nota}\' adicionada com sucesso!!! \nO aluno \'${aluno.nome}\' agora possui as notas \'${aluno.notas.join(", ")}\'.`);
-         return aluno;
+     if(result.cursos.length > 0){
+         result.notas.push(nota);
+         console.log(`Nota \'${nota}\' adicionada com sucesso!!! \nO aluno \'${result.nome}\' agora possui as notas \'${result.notas.join(", ")}\'.`);
+         return result;
      }
      console.log("Erro ao aplicar nota!!! Aluno deve estar matriculado em algum curso.");
-     return aluno;
+     return result;
  } else {
      console.log("Erro ao aplicar nota!!! Aluno deve ser cadastrado no sistema.");
      return false;
