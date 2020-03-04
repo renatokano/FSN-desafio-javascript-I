@@ -1,0 +1,29 @@
+# Continuous Integration (CI)
+# Teste com a última versão estável do Node.js, executado em plataforma Windows.
+environment:
+  matrix:
+    - node_version: "12"
+
+branches:
+  only:
+    - master
+
+# Instala os scripts e executa após clonar o repositório
+install:
+  # Obtém a última versão estável do Node.js
+  - ps: Install-Product node $env:node_version
+  # Instala os módulos/dependências do projeto
+  - npm install
+
+# Scripts de testes, pós-instalação
+test_script:
+  # Saídas úteis para `debugging`
+  - node --version
+  - npm --version
+  # Executa rotina de testes unitários
+  - npm test
+
+cache:
+  - ./node_modules -> package.json
+
+build: off
