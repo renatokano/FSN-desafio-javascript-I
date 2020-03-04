@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/renatokano/FSN-desafio-javascript-I.svg?branch=master)](https://travis-ci.com/renatokano/FSN-desafio-javascript-I)
+![Travis (.org)](https://img.shields.io/travis/renatokano/FSN-desafio-javascript-I?logo=travis)
 
 # DH Fullstack - Desafio Javascript I
 
