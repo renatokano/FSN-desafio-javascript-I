@@ -1,5 +1,5 @@
-![Travis (.org)](https://img.shields.io/travis/renatokano/FSN-desafio-javascript-I?logo=travis)
-![AppVeyor](https://img.shields.io/appveyor/build/renatokano/FSN-desafio-javascript-I?logo=appveyor)
+[![Travis (.org)](https://img.shields.io/travis/renatokano/FSN-desafio-javascript-I?logo=travis)](https://travis-ci.com/renatokano/FSN-desafio-javascript-I)
+[![AppVeyor](https://img.shields.io/appveyor/build/renatokano/FSN-desafio-javascript-I?logo=appveyor)](https://ci.appveyor.com/project/renatokano/fsn-desafio-javascript-i)
 
 # DH Fullstack - Desafio Javascript I
 
